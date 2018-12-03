@@ -1,10 +1,22 @@
-/* TODO: Create the Pizza Component consisting of:
+/*TODO: Create the Pizza Component consisting of:
   - A `div` with a class `content`
     - A `PizzaHeader` component
     - A `PizzaIngredients` component
     - A `PizzaTotal` component
-  - You need 👇 code to set the initial state
-    ingredients: {
+  - You need 👇 code to set the initial state*/
+import React from "react";
+
+class Pizza extends React.Component {
+  render() {
+    return (
+      <div className="content">
+        <h1>Hi</h1>
+      </div>
+    );
+  }
+}
+
+/*ingredients: {
       dough: {
         id: 1,
         name: "Dough",
@@ -41,5 +53,6 @@
         cash: 100,
         selected: false
       }
-    }
-*/
+    }*/
+
+export default Pizza;
