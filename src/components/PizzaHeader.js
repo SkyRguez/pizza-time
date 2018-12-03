@@ -10,7 +10,12 @@ class PizzaHeader extends React.Component {
   render() {
     return (
       <header className="header">
-        <h1>🍕 It's Pizza Time!</h1>
+        <h1>
+          <span role="img" aria-labelledby="pizza">
+            🍕
+          </span>{" "}
+          It's Pizza Time!
+        </h1>
       </header>
     );
   }
