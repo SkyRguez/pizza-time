@@ -5,13 +5,14 @@
     - A `PizzaTotal` component
   - You need 👇 code to set the initial state*/
 import React from "react";
+import PizzaHeader from "./PizzaHeader";
 
 class Pizza extends React.Component {
   render() {
     return (
-      <div className="content">
-        <h1>Hi</h1>
-      </div>
+      <PizzaHeader />
+      /*<PizzaIngredients />
+      <PizzaTotal />*/
     );
   }
 }
