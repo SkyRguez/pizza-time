@@ -3,6 +3,7 @@ import { Router } from "@reach/router";
 import StorePicker from "./StorePicker";
 import App from "./App";
 import NotFound from "./NotFound";
+import Pizza from "./Pizza";
 
 const Routes = () => (
   <Router>
