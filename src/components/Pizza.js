@@ -6,18 +6,12 @@
   - You need 👇 code to set the initial state*/
 import React from "react";
 import PizzaHeader from "./PizzaHeader";
+import PizzaIngredients from "./PizzaIngredients";
+import PizzaTotal from "./PizzaTotal";
 
 class Pizza extends React.Component {
-  render() {
-    return (
-      <PizzaHeader />
-      /*<PizzaIngredients />
-      <PizzaTotal />*/
-    );
-  }
-}
-
-/*ingredients: {
+  state = {
+    ingredients: {
       dough: {
         id: 1,
         name: "Dough",
@@ -54,6 +48,30 @@ class Pizza extends React.Component {
         cash: 100,
         selected: false
       }
-    }*/
+    }
+  };
+
+  addIngredient = ingredientKey => {
+    const newIngredient = { ...this.state.ingredients };
+    newIngredient[ingredientKey] = newIngredient[ingredientKey]
+      ? newIngredient[ingredientKey] + 1
+      : 1;
+    this.setState({ ingredients: newIngredient });
+  };
+
+  render() {
+    return (
+      <div className="content">
+        <PizzaHeader />
+        <PizzaIngredients
+          ingredients={this.state.ingredients}
+          ingredient={this.ingredients}
+          addIngredient={this.addIngredient}
+        />
+        <PizzaTotal />
+      </div>
+    );
+  }
+}
 
 export default Pizza;
