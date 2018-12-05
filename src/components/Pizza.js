@@ -52,11 +52,13 @@ class Pizza extends React.Component {
   };
 
   addIngredient = ingredientKey => {
-    const newIngredient = { ...this.state.ingredients };
-    newIngredient[ingredientKey] = newIngredient[ingredientKey]
-      ? newIngredient[ingredientKey] + 1
-      : 1;
-    this.setState({ ingredients: newIngredient });
+    const ingredients = { ...this.state.ingredients };
+    if (ingredients[ingredientKey].selected) {
+      ingredients[ingredientKey].selected = false;
+    } else {
+      ingredients[ingredientKey].selected = true;
+    }
+    this.setState({ ingredients: ingredients });
   };
 
   render() {

@@ -17,20 +17,31 @@ class PizzaIngredient extends React.Component {
     this.props.addIngredient(this.props.ingredientKey);
   };
 
+  /*
+  OTRA FORMA DE LLAMAR EL IF DEL CLASSNAME
+  
+  addIngredient = selected => {
+    let ingredient;
+
+    if (selected) {
+      ingredient = "marked";
+    } else {
+      ingredient = "";
+    }
+
+    return ingredient;
+  };*/
+
   render() {
-    const { name, cash } = this.props.ingredientsDetails;
+    const { name, cash, selected } = this.props.ingredientsDetails;
     return (
       <li
-        className={this.props.ingredients.selected ? "marked" : ""}
+        className={this.props.ingredientsDetails.selected ? "marked" : ""}
         onClick={this.handleClick}
       >
-        <h3>
-          <span className="phrase">{name}</span>
-        </h3>
-        <h3>
-          {this.props.ingredients.cash}
-          <span className="points">{formatPrice(cash)}</span>
-        </h3>
+        <span className="phrase">{name}</span>
+
+        <span className="points">{formatPrice(cash)}</span>
       </li>
     );
   }
