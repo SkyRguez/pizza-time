@@ -33,7 +33,7 @@ class PizzaIngredient extends React.Component {
   };*/
 
   render() {
-    const { name, cash, selected } = this.props.ingredientsDetails;
+    const { name, cash } = this.props.ingredientsDetails;
     return (
       <li
         className={this.props.ingredientsDetails.selected ? "marked" : ""}

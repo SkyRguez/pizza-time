@@ -70,7 +70,7 @@ class Pizza extends React.Component {
           ingredient={this.ingredients}
           addIngredient={this.addIngredient}
         />
-        <PizzaTotal />
+        <PizzaTotal ingredients={this.state.ingredients} />
       </div>
     );
   }
